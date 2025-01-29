@@ -1,12 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 import Blog from './components/Blog.jsx'
+import blogService from './services/blogs'
 
-const App = (props) => {
-  const [blogs, setBlogs] = useState(props.blogs)
+const App = () => {
+  const [blogs, setBlogs] = useState([])
   const [newTitle, setNewTitle] = useState('a new title...')
   const [newAuthor, setNewAuthor] = useState('a new author..')
   const [newUrl, setNewUrl] = useState('a new url.')
   const [newLikes, setNewLikes] = useState('How many likes?')
+
+  useEffect(() => {
+    blogService
+      .getAll()
+      .then(initialBlogs => {
+        setBlogs(initialBlogs)
+      })
+  }, [])
 
   const addBlog = (event) => {
     event.preventDefault()
@@ -15,33 +25,32 @@ const App = (props) => {
       author: newAuthor,
       url: newUrl,
       likes: newLikes,
-      id: String(blogs.length + 1)
     }
 
-    setBlogs(blogs.concat(blogObject))
-    setNewTitle('')
-    setNewAuthor('')
-    setNewUrl('')
-    setNewLikes('')
+    blogService
+      .create(blogObject)
+      .then(returnedBlog => {
+        setBlogs(blogs.concat(returnedBlog))
+        setNewTitle('')
+        setNewAuthor('')
+        setNewUrl('')
+        setNewLikes('')
+      })
   }
 
   const handleTitleChange = (event) => {
-    console.log(event.target.value)
     setNewTitle(event.target.value)
   }
 
   const handleAuthorChange = (event) => {
-    console.log(event.target.value)
     setNewAuthor(event.target.value)
   }
 
   const handleUrlChange = (event) => {
-    console.log(event.target.value)
     setNewUrl(event.target.value)
   }
 
   const handleLikesChange = (event) => {
-    console.log(event.target.value)
     setNewLikes(event.target.value)
   }
 

@@ -1,0 +1,53 @@
+{
+  "blogs": [
+    {
+      "title": "Art is easy",
+      "author": "Bobby Alu",
+      "url": "www.artistbob.com",
+      "likes": "1",
+      "id": "1"
+    },
+    {
+      "title": "Exercise is good",
+      "author": "Ninja Turtles",
+      "url": "www.fitnessturtule.com",
+      "likes": "5",
+      "id": "2"
+    },
+    {
+      "title": "Sleep is important",
+      "author": "Sleep fae",
+      "url": "www.sleepbae.com",
+      "likes": "7",
+      "id": "3"
+    },
+    {
+      "id": "77d1",
+      "title": "Chocolate is bad for your health",
+      "author": "Big White",
+      "url": "www.chocohater.com",
+      "likes": "1"
+    },
+    {
+      "id": "29ca",
+      "title": "Salads are green",
+      "author": "Health Manic",
+      "url": "www.nonstophealth.com",
+      "likes": "2"
+    },
+    {
+      "id": "f250",
+      "title": "Best time to wake up revealed",
+      "author": "Sleep Doctor",
+      "url": "www.sleepexperts.com",
+      "likes": "10"
+    },
+    {
+      "id": "a444",
+      "title": "Too much Screamtime?",
+      "author": "Screamer",
+      "url": "www.noscreaming.com",
+      "likes": "3"
+    }
+  ]
+}
